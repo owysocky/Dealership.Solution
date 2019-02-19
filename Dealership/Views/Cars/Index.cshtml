@@ -1,0 +1,18 @@
+@using Dealership.Models;
+
+<h1>Welcome to EpiDealership</h1>
+<ul>
+@if(Model.Count == 0)
+{
+<p>Add a car to the list!</p>
+}
+@if(Model.Count != 0)
+{
+  @foreach (Car item in Model)
+  {
+    <li>@item.GetYear() @item.GetMakeModel(), @item.GetMiles() miles, $@item.GetPrice()</li>
+  }
+}
+
+</ul>
+<a href="/cars/new">Add a new car.</a>
